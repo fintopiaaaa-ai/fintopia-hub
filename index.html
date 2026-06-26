@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fintopia — Algorithmic Trading, Decoded</title>
+<meta name="description" content="Fintopia: daily educational decode of Indian markets and algorithmic/systematic trading concepts. Education only — not investment advice.">
+<!-- Open Graph: makes the link preview look good when shared anywhere -->
+<meta property="og:title" content="Fintopia — Algorithmic Trading, Decoded">
+<meta property="og:description" content="Daily educational decode of Indian markets & systematic trading. Education only — not investment advice.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#0a0e18; --bg2:#060a0f; --card:#111726; --teal:#00dcb4;
+    --amber:#ffc43d; --white:#f0f5fc; --grey:#96a2b6; --line:#1d2740;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%, #16203a 0%, var(--bg) 55%, var(--bg2) 100%);
+    color:var(--white); min-height:100vh; display:flex; justify-content:center;
+    padding:38px 18px 44px;
+  }
+  .wrap{width:100%; max-width:440px; text-align:center}
+  .logo{font-size:34px; font-weight:800; letter-spacing:-.5px}
+  .logo .dot{color:var(--teal)}
+  .tag{margin-top:6px; color:var(--amber); font-weight:700; font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase}
+  .blurb{margin:16px auto 4px; color:var(--grey); font-size:14.5px; line-height:1.55; max-width:360px}
+  .links{margin-top:26px; display:flex; flex-direction:column; gap:13px}
+  a.btn{
+    display:flex; align-items:center; gap:14px; text-decoration:none;
+    background:var(--card); border:1px solid var(--line); border-radius:15px;
+    padding:16px 18px; color:var(--white); font-weight:650; font-size:15.5px;
+    transition:transform .12s ease, border-color .12s ease, background .12s ease;
+  }
+  a.btn:hover{transform:translateY(-2px); border-color:var(--teal); background:#141c30}
+  a.btn .ic{width:34px; height:34px; flex:0 0 34px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:18px}
+  a.btn .tx{text-align:left; line-height:1.25}
+  a.btn .tx small{display:block; color:var(--grey); font-weight:500; font-size:12.5px; margin-top:2px}
+  a.btn .arrow{margin-left:auto; color:var(--grey); font-size:18px}
+  .primary{border-color:rgba(0,220,180,.45); background:linear-gradient(180deg,#10283a,#0e1c2c)}
+  .ic-yt{background:#ff0033}
+  .ic-tg{background:#2aabee}
+  .ic-sh{background:#11161f; border:1px solid var(--line)}
+  .disc{margin-top:30px; color:var(--grey); font-size:11.5px; line-height:1.6; border-top:1px solid var(--line); padding-top:18px}
+  .disc b{color:#c3ccda}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">Fintopia<span class="dot">.</span></div>
+    <div class="tag">Algorithmic Trading, Decoded</div>
+    <p class="blurb">A daily, plain-English decode of Indian markets and how systematic / algorithmic processes think about them. For learning — never tips or calls.</p>
+
+    <div class="links" id="links"></div>
+
+    <div class="disc">
+      <b>Education only — not investment advice.</b><br>
+      Fintopia is independent educational content and is not registered with SEBI as an investment adviser or research analyst. Nothing here is a recommendation to buy, sell, or hold any security. Markets carry risk; consult a SEBI-registered professional before investing.
+    </div>
+  </div>
+
+<script>
+  // ====== EDIT THESE THREE LINES ONLY ======
+  const LINKS = {
+    youtube:  "https://www.youtube.com/@Fintopia-b8q",   // your YouTube channel
+    telegram: "https://t.me/fintopiaaaa",             // your free Telegram channel
+    shorts:   "https://www.youtube.com/@Fintopia-b8q/shorts"  // your Shorts tab
+  };
+  // =========================================
+  const items = [
+    {href:LINKS.youtube,  cls:"primary", ic:"ic-yt", icon:"▶", title:"Watch on YouTube", sub:"Daily Market Decode — full breakdowns"},
+    {href:LINKS.telegram, cls:"",        ic:"ic-tg", icon:"✈", title:"Join free Telegram", sub:"Daily market notes & news, no spam"},
+    {href:LINKS.shorts,   cls:"",        ic:"ic-sh", icon:"⚡", title:"Quick Shorts", sub:"60-second concepts"}
+  ];
+  const box = document.getElementById("links");
+  items.forEach(it=>{
+    if(!it.href) return;
+    const a=document.createElement("a");
+    a.className="btn "+it.cls; a.href=it.href; a.target="_blank"; a.rel="noopener";
+    a.innerHTML=`<span class="ic ${it.ic}">${it.icon}</span>
+      <span class="tx">${it.title}<small>${it.sub}</small></span>
+      <span class="arrow">→</span>`;
+    box.appendChild(a);
+  });
+</script>
+</body>
+</html>
